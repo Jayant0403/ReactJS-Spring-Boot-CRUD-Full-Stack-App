@@ -19,6 +19,27 @@
 	</properties>
 
 	<dependencies>
+		<!-- Exclude safe SnakeYAML from Spring Boot starter to force vulnerable version -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <!-- Your existing version, e.g., <version>3.1.0</version> -->
+        <exclusions>
+            <exclusion>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+            </exclusion>
+        </exclusions>
+    </dependency>
+
+    <!-- Add vulnerable SnakeYAML explicitly -->
+    <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>1.32</version>  <!-- Vulnerable version ≤1.32 -->
+    </dependency>
+
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
