@@ -36,7 +36,7 @@
     <dependency>
         <groupId>org.yaml</groupId>
         <artifactId>snakeyaml</artifactId>
-        <version>1.32</version>  <!-- Vulnerable version ≤1.32 -->
+        <version>1.29</version>  <!-- Vulnerable version ≤1.32 -->
     </dependency>
 
 		
